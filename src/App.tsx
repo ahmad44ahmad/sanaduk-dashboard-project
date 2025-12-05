@@ -132,7 +132,7 @@ function App() {
                             <p className="text-slate-400">منظومة قيم تدمج بين الجانب الإنساني والتميز التشغيلي</p>
                         </div>
                         <div className="bg-white/10 px-6 py-3 rounded-full text-sm font-medium backdrop-blur-sm">
-                 إنسان > إجراء
+                            إنسان &gt; إجراء
                         </div>
                     </div>
 
