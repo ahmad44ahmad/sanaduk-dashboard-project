@@ -18,10 +18,10 @@ function App() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <div className="min-h-screen bg-slate-50 font-sans" dir="rtl">
+        <div className="min-h-screen bg-slate-50 font-sans ios-scroll" dir="rtl">
             {/* Header */}
-            <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-primary/10">
-                <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-primary/10 safe-top">
+                <div className="container mx-auto px-4 safe-x py-3 sm:py-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="relative w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center overflow-hidden">
                             <div className="absolute inset-0 bg-primary opacity-20 rounded-full"></div>
@@ -41,7 +41,7 @@ function App() {
                         <a href="#impact" className="hover:text-primary transition-colors">الأثر</a>
                     </nav>
 
-                    <button className="md:hidden p-2" onClick={toggleMenu}>
+                    <button className="md:hidden p-3 -mr-2" onClick={toggleMenu} aria-label="القائمة">
                         {isMenuOpen ? <X /> : <Menu />}
                     </button>
                 </div>
@@ -60,23 +60,23 @@ function App() {
             </header>
 
             {/* Hero Section */}
-            <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-primary/5 to-transparent">
+            <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 safe-x bg-gradient-to-b from-primary/5 to-transparent">
                 <div className="container mx-auto text-center max-w-4xl">
                     <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6 border border-gray-100">
                         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                         <span className="text-sm text-gray-600 font-medium">نموذج رشيق ومبتكر</span>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                         من الرعاية التقليدية إلى <span className="text-primary">الشراكة المجتمعية</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
                         نبتكر نموذج عمل يعتمد على "رأس المال الاجتماعي" لتمكين مرضى السكري في النماص، مستلهمين من شموخ جبال السروات عزيمة للتغيير.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                        <button className="bg-primary active:bg-primary/80 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2 w-full sm:w-auto">
                             ابدأ رحلتك معنا <ArrowRight className="w-5 h-5" />
                         </button>
-                        <button className="bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-xl font-bold shadow-md border border-gray-100 transition-all">
+                        <button className="bg-white active:bg-gray-50 text-gray-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold shadow-md border border-gray-100 transition-all active:scale-95 w-full sm:w-auto">
                             تعرف على النموذج
                         </button>
                     </div>
@@ -84,8 +84,8 @@ function App() {
             </section>
 
             {/* Context Section (Geography) */}
-            <section id="vision" className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section id="vision" className="py-16 sm:py-20 bg-white">
+                <div className="container mx-auto px-4 safe-x">
                     <div className="max-w-3xl mx-auto text-center mb-16">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">لماذا النماص؟ ولماذا الآن؟</h2>
                         <p className="text-gray-600">التحدي المكاني يفرض حلاً مبتكراً. العزلة الجغرافية ليست عائقاً بل حافز لبناء نظام بيئي مكتفٍ ذاتياً.</p>
@@ -124,8 +124,8 @@ function App() {
             </section>
 
             {/* Values Section */}
-            <section id="values" className="py-20 bg-slate-900 text-white">
-                <div className="container mx-auto px-4">
+            <section id="values" className="py-16 sm:py-20 bg-slate-900 text-white">
+                <div className="container mx-auto px-4 safe-x">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
                         <div>
                             <h2 className="text-3xl font-bold text-white mb-2">قيمنا الراسخة</h2>
@@ -154,8 +154,8 @@ function App() {
             </section>
 
             {/* Journey Unit Section */}
-            <section id="journey" className="py-20 bg-primary/5">
-                <div className="container mx-auto px-4">
+            <section id="journey" className="py-16 sm:py-20 bg-primary/5">
+                <div className="container mx-auto px-4 safe-x">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">وحدة "رحلتك"</h2>
                         <p className="text-gray-600 max-w-2xl mx-auto"> القلب النابض للجمعية. لسنا مجرد مقدم خدمة، نحن رفيق في رحلة حياة. </p>
@@ -184,8 +184,8 @@ function App() {
             </section>
 
             {/* Technology Section */}
-            <section id="tech" className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section id="tech" className="py-16 sm:py-20 bg-white">
+                <div className="container mx-auto px-4 safe-x">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-3xl font-bold text-gray-900 mb-6">البنية التقنية-الإنسانية</h2>
@@ -238,8 +238,8 @@ function App() {
             </section>
 
             {/* KPIs Section */}
-            <section id="impact" className="py-20 bg-slate-900 text-white">
-                <div className="container mx-auto px-4">
+            <section id="impact" className="py-16 sm:py-20 bg-slate-900 text-white">
+                <div className="container mx-auto px-4 safe-x">
                     <h2 className="text-3xl font-bold mb-12 text-center">مصفوفة الأثر (The Impact Matrix)</h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl text-center">
@@ -262,8 +262,8 @@ function App() {
             </section>
 
             {/* Footer */}
-            <footer className="bg-white border-t border-gray-100 py-12">
-                <div className="container mx-auto px-4 text-center">
+            <footer className="bg-white border-t border-gray-100 py-12 safe-bottom">
+                <div className="container mx-auto px-4 safe-x text-center">
                     <div className="flex justify-center items-center gap-2 mb-6">
                         <Mountain className="text-primary w-6 h-6" />
                         <h2 className="text-2xl font-bold text-gray-900">جمعية سندك</h2>
